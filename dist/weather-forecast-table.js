@@ -16,7 +16,21 @@ class ContentCardExample extends HTMLElement {
     const state = hass.states[entityId];
     const stateStr = state ? state.state : "unavailable";
 
-    this.content.innerHTML = `Hello world`;
+
+	const forecast =state.attributes.forecast;
+	
+	var trs = forecast.map((item )=> {
+		return `<tr>
+			<td>${item.temperature}</td>
+		</tr>`;
+	});		
+	
+    this.content.innerHTML = `<table>
+								<tr>
+									<th>Température</th>
+								</tr>
+								${trs}
+								</table>`;
   }
 
   // The user supplied configuration. Throw an exception and Home Assistant
