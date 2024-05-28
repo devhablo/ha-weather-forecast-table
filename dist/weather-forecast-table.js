@@ -57,8 +57,9 @@ class ContentCardExample extends HTMLElement {
         item.temperature
       }</td>
 					<td>${item.wind_bearing}</td>
-					<td>${item.wind_speed}</td>
-					<td>${item.precipitation}</td>
+					<td>${item.wind_speed || "-"}</td>
+					<td>${item.precipitation || "-"}</td>
+					<td>${item.humidity}%</td>
 					<td>${item.condition}</td>
 				</tr>`;
     });
