@@ -29,6 +29,25 @@ function getColor(value) {
   const { r, g, b } = tempToColor(value);
   return `rgb(${r},${g},${b})`;
 }
+
+const conditionIcon = {
+  clear: "weather-sunny",
+  "clear-night": "weather-night",
+  cloudy: "weather-cloudy",
+  fog: "weather-fog",
+  hail: "weather-hail",
+  lightning: "weather-lightning",
+  "lightning-rainy": "weather-lightning-rainy",
+  partlycloudy: "weather-partly-cloudy",
+  pouring: "weather-pouring",
+  rainy: "weather-rainy",
+  snowy: "weather-snowy",
+  "snowy-rainy": "weather-snowy-rainy",
+  sunny: "weather-sunny",
+  windy: "weather-windy",
+  "windy-variant": "weather-windy",
+};
+
 class ContentCardExample extends HTMLElement {
   // Whenever the state changes, a new `hass` object is set. Use this to
   // update your content.
@@ -76,11 +95,17 @@ class ContentCardExample extends HTMLElement {
 					<td  style="background-color:${getColor(item.temperature)}">${
           item.temperature
         }</td>
-					<td>${item.wind_bearing}</td>
+					<td>  
+            <div style="display:${
+              item.wind_bearing ? "inline-block" : "hide"
+            }; transform:rotate(${(item.wind_bearing || 0) + 180}deg)">
+              <ha-icon icon="mdi:arrow-up" ></ha-icon>
+            </div>
+          </td>
 					<td>${item.wind_speed || "-"}</td>
 					<td>${item.precipitation || "-"}</td>
 					<td>${item.humidity}%</td>
-					<td>${item.condition}</td>
+					<td><ha-icon icon="mdi:${conditionIcon[item.condition]}"></ha-icon></td>
 				</tr>`;
       });
 
@@ -90,14 +115,20 @@ class ContentCardExample extends HTMLElement {
 										<th rowspan="2">Jour<th>
 										<th rowspan="2">Heure<th>
 										<th rowspan="2">Temp<th>
-										<th colspan="2">Vitesse vent.</th>
+										<th colspan="2">Vent km/h</th>
 										<th rowspan="2">Pluie<th>
 										<th rowspan="2">Humidité<th>
 										<th rowspan="2">Temps<th>
 									</tr>
 									<tr>
-										<th>Dir.<th>
-										<th>Vit.<th>
+                    <th><th>
+                    <th><th>
+                    <th><th>
+                    <th>Dir.<th>
+                    <th>Vit.<th>
+                    <th><th>
+                    <th><th>
+                    <th><th>
 									</tr>
 								</thead>
 								<tbody>
