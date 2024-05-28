@@ -1,3 +1,30 @@
+function checkRange(e) {
+  return e <= 0 ? 0 : e > 255 ? 255 : e;
+}
+function tempToColor(e, t = -20, f = 50) {
+  if (t > f) throw new Error("minimum cannot be greater than maximum");
+  e < t ? (e = t) : e > f && (e = f);
+  const r = (e - t) / (f - t);
+  let n = 255,
+    u = 255,
+    o = 255;
+  const c = [1 / 4, (1 / 4) * 2, (1 / 4) * 3];
+  return (
+    r <= c[0]
+      ? ((n = 0), (u = 4 * r * 255.999), (o = 255))
+      : r > c[0] && r <= c[1]
+      ? ((n = 0), (u = 255), (o = 512 - 4 * r * 255.999))
+      : r > c[1] && r <= c[2]
+      ? ((n = 512 - 4 * (1 - r) * 255.999), (u = 255), (o = 0))
+      : ((n = 255), (u = 4 * (1 - r) * 255.999), (o = 0)),
+    {
+      r: checkRange(Math.trunc(n)),
+      g: checkRange(Math.trunc(u)),
+      b: checkRange(Math.trunc(o)),
+    }
+  );
+}
+
 class ContentCardExample extends HTMLElement {
   // Whenever the state changes, a new `hass` object is set. Use this to
   // update your content.
@@ -16,21 +43,22 @@ class ContentCardExample extends HTMLElement {
     const state = hass.states[entityId];
     const stateStr = state ? state.state : "unavailable";
 
+    const forecast = state.attributes.forecast;
 
-	const forecast =state.attributes.forecast;
-	
-	var trs = forecast.map((item )=> {
-		return `<tr>
+    var trs = forecast.map((item) => {
+      return `<tr>
 					<td>${item.datetime}</td>
 					<td>-</td>
-					<td>${item.temperature}</td>
+					<td  style="background-color:${tempToColor(item.temperature)}">${
+        item.temperature
+      }</td>
 					<td>${item.wind_bearing}</td>
 					<td>${item.wind_speed}</td>
 					<td>${item.precipitation}</td>
 					<td>${item.condition}</td>
 				</tr>`;
-	});		
-	
+    });
+
     this.content.innerHTML = `<table>
 								<thead>
 									<tr>
