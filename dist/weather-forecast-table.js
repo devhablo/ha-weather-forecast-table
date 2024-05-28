@@ -1,7 +1,7 @@
 function checkRange(e) {
   return e <= 0 ? 0 : e > 255 ? 255 : e;
 }
-function tempToColor(e, t = -20, f = 50) {
+function tempToColor(e, t = -15, f = 45) {
   if (t > f) throw new Error("minimum cannot be greater than maximum");
   e < t ? (e = t) : e > f && (e = f);
   const r = (e - t) / (f - t);
@@ -49,20 +49,39 @@ class ContentCardExample extends HTMLElement {
 
     const forecast = state.attributes.forecast;
 
-    var trs = forecast.map((item) => {
-      return `<tr>
-					<td>${item.datetime}</td>
-					<td>-</td>
+    var trs = forecast
+      .map((item) => {
+        return {
+          day: new Date(item.datetime).toLocaleDateString("fr-FR", {
+            weekday: "long",
+            day: "numeric",
+          }),
+          time: new Date(item.datetime).toLocaleDateString("fr-FR", {
+            timeStyle: "short",
+          }),
+          wind_bearing: item.wind_bearing,
+          temperature: item.temperature,
+          condition: item.condition,
+          humidity: item.humidity,
+          precipitation: item.precipitation,
+          wind_bearing: item.wind_bearing,
+          wind_speed: item.wind_speed,
+        };
+      })
+      .map((item) => {
+        return `<tr>
+					<td>${item.day}</td>
+					<td>${item.time}</td>
 					<td  style="background-color:${getColor(item.temperature)}">${
-        item.temperature
-      }</td>
+          item.temperature
+        }</td>
 					<td>${item.wind_bearing}</td>
 					<td>${item.wind_speed || "-"}</td>
 					<td>${item.precipitation || "-"}</td>
 					<td>${item.humidity}%</td>
 					<td>${item.condition}</td>
 				</tr>`;
-    });
+      });
 
     this.content.innerHTML = `<table>
 								<thead>
