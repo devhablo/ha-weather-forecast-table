@@ -21,15 +21,35 @@ class ContentCardExample extends HTMLElement {
 	
 	var trs = forecast.map((item )=> {
 		return `<tr>
-			<td>${item.temperature}</td>
-		</tr>`;
+					<td>${item.datetime}</td>
+					<td>-</td>
+					<td>${item.temperature}</td>
+					<td>${item.wind_bearing}</td>
+					<td>${item.wind_speed}</td>
+					<td>${item.precipitation}</td>
+					<td>${item.condition}</td>
+				</tr>`;
 	});		
 	
     this.content.innerHTML = `<table>
-								<tr>
-									<th>Température</th>
-								</tr>
-								${trs}
+								<thead>
+									<tr>
+										<th rowspan="2">Jour<th>
+										<th rowspan="2">Heure<th>
+										<th rowspan="2">Temp<th>
+										<th colspan="2">Vitesse vent.</th>
+										<th rowspan="2">Pluie<th>
+										<th rowspan="2">Humidité<th>
+										<th rowspan="2">Temps<th>
+									</tr>
+									<tr>
+										<th>Dir.<th>
+										<th>Vit.<th>
+									</tr>
+								</thead>
+								<tbody>
+									${trs}
+								</tbody>
 								</table>`;
   }
 
