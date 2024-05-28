@@ -112,23 +112,23 @@ class ContentCardExample extends HTMLElement {
     this.content.innerHTML = `<table>
 								<thead>
 									<tr>
-										<th rowspan="2">Jour<th>
-										<th rowspan="2">Heure<th>
-										<th rowspan="2">Temp<th>
+										<th rowspan="2">Jour</th>
+										<th rowspan="2">Heure</th>
+										<th rowspan="2">Temp</th>
 										<th colspan="2">Vent km/h</th>
-										<th rowspan="2">Pluie<th>
-										<th rowspan="2">Humidité<th>
-										<th rowspan="2">Temps<th>
+										<th rowspan="2">Pluie</th>
+										<th rowspan="2">Humidité</th>
+										<th rowspan="2">Temps</th>
 									</tr>
 									<tr>
-                    <th><th>
-                    <th><th>
-                    <th><th>
-                    <th>Dir.<th>
-                    <th>Vit.<th>
-                    <th><th>
-                    <th><th>
-                    <th><th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th>Dir.</th>
+                    <th>Vit.</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
 									</tr>
 								</thead>
 								<tbody>
