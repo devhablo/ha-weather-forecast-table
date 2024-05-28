@@ -25,6 +25,10 @@ function tempToColor(e, t = -20, f = 50) {
   );
 }
 
+function getColor(value) {
+  const { r, g, b } = tempToColor(value);
+  return `rgb(${r},${g},${b})`;
+}
 class ContentCardExample extends HTMLElement {
   // Whenever the state changes, a new `hass` object is set. Use this to
   // update your content.
@@ -49,7 +53,7 @@ class ContentCardExample extends HTMLElement {
       return `<tr>
 					<td>${item.datetime}</td>
 					<td>-</td>
-					<td  style="background-color:${tempToColor(item.temperature)}">${
+					<td  style="background-color:${getColor(item.temperature)}">${
         item.temperature
       }</td>
 					<td>${item.wind_bearing}</td>
