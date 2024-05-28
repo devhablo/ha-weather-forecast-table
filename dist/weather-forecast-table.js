@@ -51,12 +51,13 @@ class ContentCardExample extends HTMLElement {
 
     var trs = forecast
       .map((item) => {
+        const itemDate = new Date(item.datetime);
         return {
-          day: new Date(item.datetime).toLocaleDateString("fr-FR", {
+          day: itemDate.toLocaleString("fr-FR", {
             weekday: "long",
             day: "numeric",
           }),
-          time: new Date(item.datetime).toLocaleDateString("fr-FR", {
+          time: itemDate.toLocaleString("fr-FR", {
             timeStyle: "short",
           }),
           wind_bearing: item.wind_bearing,
