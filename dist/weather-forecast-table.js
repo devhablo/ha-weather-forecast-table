@@ -57,8 +57,7 @@ class ContentCardExample extends HTMLElement {
       this.innerHTML = `
         <ha-card header="Example-card">
           <div class="card-content"></div>
-        </ha-card>
-      `;
+        </ha-card>`;
       this.content = this.querySelector("div");
     }
 
@@ -92,7 +91,7 @@ class ContentCardExample extends HTMLElement {
         return `<tr>
 					<td>${item.day}</td>
 					<td>${item.time}</td>
-					<td  style="background-color:${getColor(item.temperature)}">${
+					<td style="color:#aeaeae;background-color:${getColor(item.temperature)}">${
           item.temperature
         }</td>
 					<td>  
@@ -103,7 +102,7 @@ class ContentCardExample extends HTMLElement {
             </div>
           </td>
 					<td>${item.wind_speed || "-"}</td>
-					<td>${item.precipitation || "-"}</td>
+					<td>${item.precipitation || "-"}${item.precipitation ? "mm" : ""}</td>
 					<td>${item.humidity}%</td>
 					<td><ha-icon icon="mdi:${conditionIcon[item.condition]}"></ha-icon></td>
 				</tr>`;
@@ -114,21 +113,15 @@ class ContentCardExample extends HTMLElement {
 									<tr>
 										<th rowspan="2">Jour</th>
 										<th rowspan="2">Heure</th>
-										<th rowspan="2">Temp</th>
+										<th rowspan="2">Temp.</th>
 										<th colspan="2">Vent km/h</th>
 										<th rowspan="2">Pluie</th>
 										<th rowspan="2">Humidité</th>
 										<th rowspan="2">Temps</th>
 									</tr>
 									<tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
                     <th>Dir.</th>
                     <th>Vit.</th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
 									</tr>
 								</thead>
 								<tbody>
