@@ -91,7 +91,7 @@ class ContentCardExample extends HTMLElement {
         return `<tr>
 					<td>${item.day}</td>
 					<td>${item.time}</td>
-					<td style="color:#aeaeae;background-color:${getColor(item.temperature)}">${
+					<td style="color:#6e6e6e;background-color:${getColor(item.temperature)}">${
           item.temperature
         }</td>
 					<td>  
@@ -108,7 +108,7 @@ class ContentCardExample extends HTMLElement {
 				</tr>`;
       });
 
-    this.content.innerHTML = `<table>
+    this.content.innerHTML = `<table style="width:100%">
 								<thead>
 									<tr>
 										<th rowspan="2">Jour</th>
