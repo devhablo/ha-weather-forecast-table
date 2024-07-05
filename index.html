@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Developement page</title>
+    <script type="module" src="/src/forecastTable.ts"></script>
+    <script type="text/javascript" src="/index.js"></script>
+    <link href="/index.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css"  rel="stylesheet" />
+  </head>
+  <body>
+    <ha-icon icon="mdi:arrow-up"></ha-icon>
+    <h1>Developement page</h1>
+    <forecast-table id="test" ></forecast-table>
+    <script type="text/javascript">
+      document.getElementById("test").forecast = forecast
+    </script>
+  </body>
+</html>

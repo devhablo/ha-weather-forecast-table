@@ -1,0 +1,259 @@
+const forecast = [
+   {
+      datetime: "2024-05-09T13:00:00+00:00",
+      condition: "cloudy",
+      wind_bearing: 10,
+      temperature: 45,
+      wind_speed: 10.8,
+      precipitation: 0,
+      humidity: 55,
+   }, {
+      datetime: "2024-05-09T14:00:00+00:00",
+      condition: "cloudy",
+      wind_bearing: 350,
+      temperature: 42,
+      wind_speed: 10.8,
+      precipitation: 0,
+      humidity: 55,
+   }, {
+      datetime: "2024-05-09T15:00:00+00:00",
+      condition: "cloudy",
+      wind_bearing: 350,
+      temperature: 40,
+      wind_speed: 10.8,
+      precipitation: 0,
+      humidity: 60,
+   }, {
+      datetime: "2024-05-09T16:00:00+00:00",
+      condition: "cloudy",
+      wind_bearing: 10,
+      temperature: 38,
+      wind_speed: 10.8,
+      precipitation: 0,
+      humidity: 65,
+   }, {
+      datetime: "2024-05-09T17:00:00+00:00",
+      condition: "cloudy",
+      wind_bearing: 10,
+      temperature: 36,
+      wind_speed: 7.2,
+      precipitation: 0,
+      humidity: 70,
+   }, {
+      datetime: "2024-05-09T18:00:00+00:00",
+      condition: "cloudy",
+      wind_bearing: 360,
+      temperature: 34,
+      wind_speed: 7.2,
+      precipitation: 0,
+      humidity: 70,
+   }, {
+      datetime: "2024-05-09T19:00:00+00:00",
+      condition: "cloudy",
+      wind_bearing: 20,
+      temperature: 32,
+      wind_speed: 7.2,
+      precipitation: 0,
+      humidity: 70,
+   }, {
+      datetime: "2024-05-09T20:00:00+00:00",
+      condition: "cloudy",
+      wind_bearing: 25,
+      temperature: 30,
+      wind_speed: 7.2,
+      precipitation: 0,
+      humidity: 75,
+   }, {
+      datetime: "2024-05-09T21:00:00+00:00",
+      condition: "cloudy",
+      wind_bearing: null,
+      temperature: 28,
+      wind_speed: 3.6,
+      precipitation: 0,
+      humidity: 70,
+   }, {
+      datetime: "2024-05-09T22:00:00+00:00",
+      condition: "cloudy",
+      wind_bearing: null,
+      temperature: 26,
+      wind_speed: 3.6,
+      precipitation: 0,
+      humidity: 70,
+   }, {
+      datetime: "2024-05-09T23:00:00+00:00",
+      condition: "cloudy",
+      wind_bearing: 310,
+      temperature: 24,
+      wind_speed: 7.2,
+      precipitation: 0,
+      humidity: 75,
+   }, {
+      datetime: "2024-05-10T00:00:00+00:00",
+      condition: "cloudy",
+      wind_bearing: 335,
+      temperature: 22,
+      wind_speed: 7.2,
+      precipitation: 0,
+      humidity: 75,
+   }, {
+      datetime: "2024-05-10T01:00:00+00:00",
+      condition: "cloudy",
+      wind_bearing: null,
+      temperature: 20,
+      wind_speed: 3.6,
+      precipitation: 0,
+      humidity: 85,
+   }, {
+      datetime: "2024-05-10T02:00:00+00:00",
+      condition: "rainy",
+      wind_bearing: 60,
+      temperature: 18,
+      wind_speed: 7.2,
+      precipitation: 0.1,
+      humidity: 85,
+   }, {
+      datetime: "2024-05-10T03:00:00+00:00",
+      condition: "cloudy",
+      wind_bearing: null,
+      temperature: 16,
+      wind_speed: 0,
+      precipitation: 0.3,
+      humidity: 90,
+   }, {
+      datetime: "2024-05-10T04:00:00+00:00",
+      condition: "cloudy",
+      wind_bearing: null,
+      temperature: 14,
+      wind_speed: 3.6,
+      precipitation: 0.5,
+      humidity: 95,
+   }, {
+      datetime: "2024-05-10T05:00:00+00:00",
+      condition: "cloudy",
+      wind_bearing: null,
+      temperature: 12,
+      wind_speed: 3.6,
+      precipitation: 0.7,
+      humidity: 95,
+   }, {
+      datetime: "2024-05-10T06:00:00+00:00",
+      condition: "rainy",
+      wind_bearing: null,
+      temperature: 10,
+      wind_speed: 3.6,
+      precipitation: 0.9,
+      humidity: 90,
+   }, {
+      datetime: "2024-05-10T07:00:00+00:00",
+      condition: "rainy",
+      wind_bearing: 210,
+      temperature: 8,
+      wind_speed: 7.2,
+      precipitation: 1.1,
+      humidity: 90,
+   }, {
+      datetime: "2024-05-10T08:00:00+00:00",
+      condition: "rainy",
+      wind_bearing: 360,
+      temperature: 6,
+      wind_speed: 7.2,
+      precipitation: 1.3,
+      humidity: 90,
+   }, {
+      datetime: "2024-05-10T09:00:00+00:00",
+      condition: "rainy",
+      wind_bearing: 55,
+      temperature: 4,
+      wind_speed: 7.2,
+      precipitation: 1.5,
+      humidity: 95,
+   }, {
+      datetime: "2024-05-10T10:00:00+00:00",
+      condition: "cloudy",
+      wind_bearing: 195,
+      temperature: 2,
+      wind_speed: 7.2,
+      precipitation: 1.7,
+      humidity: 95,
+   }, {
+      datetime: "2024-05-10T11:00:00+00:00",
+      condition: "rainy",
+      wind_bearing: 170,
+      temperature: 0,
+      wind_speed: 7.2,
+      precipitation: 1.9,
+      humidity: 85,
+   }, {
+      datetime: "2024-05-10T12:00:00+00:00",
+      condition: "partlycloudy",
+      wind_bearing: 165,
+      temperature: -2,
+      wind_speed: 7.2,
+      precipitation: 2.5,
+      humidity: 75,
+   }, {
+      datetime: "2024-05-10T13:00:00+00:00",
+      condition: "sunny",
+      wind_bearing: 235,
+      temperature: -4,
+      wind_speed: 14.4,
+      precipitation: 3,
+      humidity: 55,
+   }, {
+      datetime: "2024-05-10T14:00:00+00:00",
+      condition: "rainy",
+      wind_bearing: 340,
+      temperature: -6,
+      wind_speed: 18,
+      precipitation: 3.5,
+      humidity: 70,
+   }, {
+      datetime: "2024-05-10T15:00:00+00:00",
+      condition: "sunny",
+      wind_bearing: 65,
+      temperature: -8,
+      wind_speed: 14.4,
+      precipitation: 4,
+      humidity: 80,
+   }, {
+      datetime: "2024-05-10T16:00:00+00:00",
+      condition: "sunny",
+      wind_bearing: 225,
+      temperature: -10,
+      wind_speed: 14.4,
+      precipitation: 4.5,
+      humidity: 65
+   }, {
+      datetime: "2024-05-10T17:00:00+00:00",
+      condition: "sunny",
+      wind_bearing: 225,
+      temperature: -10,
+      wind_speed: 14.4,
+      precipitation: 5,
+      humidity: 65
+   }
+]
+
+
+
+class HaIconMock extends HTMLElement {
+
+   // Track these attributes:
+   static get observedAttributes() {
+      return ['icon'];
+   }
+   constructor() {
+      super()
+      this.innerHTML = ``;
+
+   }
+   attributeChangedCallback(name, oldValue, newValue) {
+      if (name == 'icon') {
+         this.innerHTML = `<link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css"  rel="stylesheet" />
+         <span class="mdi ${newValue.replace("mdi:", "mdi-")}"></span>`;
+      }
+   }
+
+}
+customElements.define('ha-icon', HaIconMock)
+
