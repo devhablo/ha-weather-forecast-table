@@ -1,7 +1,7 @@
 const forecast = [
    {
       datetime: "2024-05-09T13:00:00+00:00",
-      condition: "cloudy",
+      condition: "clear",
       wind_bearing: 10,
       temperature: 45,
       wind_speed: 10.8,
@@ -9,7 +9,7 @@ const forecast = [
       humidity: 55,
    }, {
       datetime: "2024-05-09T14:00:00+00:00",
-      condition: "cloudy",
+      condition: "clear-night",
       wind_bearing: 350,
       temperature: 42,
       wind_speed: 10.8,
@@ -25,7 +25,7 @@ const forecast = [
       humidity: 60,
    }, {
       datetime: "2024-05-09T16:00:00+00:00",
-      condition: "cloudy",
+      condition: "fog",
       wind_bearing: 10,
       temperature: 38,
       wind_speed: 10.8,
@@ -33,7 +33,7 @@ const forecast = [
       humidity: 65,
    }, {
       datetime: "2024-05-09T17:00:00+00:00",
-      condition: "cloudy",
+      condition: "hail",
       wind_bearing: 10,
       temperature: 36,
       wind_speed: 7.2,
@@ -41,7 +41,7 @@ const forecast = [
       humidity: 70,
    }, {
       datetime: "2024-05-09T18:00:00+00:00",
-      condition: "cloudy",
+      condition: "lightning",
       wind_bearing: 360,
       temperature: 34,
       wind_speed: 7.2,
@@ -49,7 +49,7 @@ const forecast = [
       humidity: 70,
    }, {
       datetime: "2024-05-09T19:00:00+00:00",
-      condition: "cloudy",
+      condition: "lightning-rainy",
       wind_bearing: 20,
       temperature: 32,
       wind_speed: 7.2,
@@ -57,7 +57,7 @@ const forecast = [
       humidity: 70,
    }, {
       datetime: "2024-05-09T20:00:00+00:00",
-      condition: "cloudy",
+      condition: "partlycloudy",
       wind_bearing: 25,
       temperature: 30,
       wind_speed: 7.2,
@@ -65,7 +65,7 @@ const forecast = [
       humidity: 75,
    }, {
       datetime: "2024-05-09T21:00:00+00:00",
-      condition: "cloudy",
+      condition: "pouring",
       wind_bearing: null,
       temperature: 28,
       wind_speed: 3.6,
@@ -73,7 +73,7 @@ const forecast = [
       humidity: 70,
    }, {
       datetime: "2024-05-09T22:00:00+00:00",
-      condition: "cloudy",
+      condition: "rainy",
       wind_bearing: null,
       temperature: 26,
       wind_speed: 3.6,
@@ -81,7 +81,7 @@ const forecast = [
       humidity: 70,
    }, {
       datetime: "2024-05-09T23:00:00+00:00",
-      condition: "cloudy",
+      condition: "snowy",
       wind_bearing: 310,
       temperature: 24,
       wind_speed: 7.2,
@@ -89,7 +89,7 @@ const forecast = [
       humidity: 75,
    }, {
       datetime: "2024-05-10T00:00:00+00:00",
-      condition: "cloudy",
+      condition: "snowy-rainy",
       wind_bearing: 335,
       temperature: 22,
       wind_speed: 7.2,
@@ -97,7 +97,7 @@ const forecast = [
       humidity: 75,
    }, {
       datetime: "2024-05-10T01:00:00+00:00",
-      condition: "cloudy",
+      condition: "sunny",
       wind_bearing: null,
       temperature: 20,
       wind_speed: 3.6,
@@ -105,7 +105,7 @@ const forecast = [
       humidity: 85,
    }, {
       datetime: "2024-05-10T02:00:00+00:00",
-      condition: "rainy",
+      condition: "windy",
       wind_bearing: 60,
       temperature: 18,
       wind_speed: 7.2,
@@ -113,7 +113,7 @@ const forecast = [
       humidity: 85,
    }, {
       datetime: "2024-05-10T03:00:00+00:00",
-      condition: "cloudy",
+      condition: "windy-variant",
       wind_bearing: null,
       temperature: 16,
       wind_speed: 0,
