@@ -23,9 +23,14 @@ export class ForecastTable extends LitElement {
     .forecastTable tr.odd{
       background-color: var(--table-row-background-color);
       }
-      .forecastTable tr.even{
-        background-color:var(--table-row-alternative-background-color);
-      }
+    .forecastTable tr.even{
+      background-color:var(--table-row-alternative-background-color);
+    }
+    .weatherIcon[icon="mdi:weather-lightning"],
+     .weatherIcon[icon="mdi:weather-lightning-rainy"],
+      .weatherIcon[icon="mdi:weather-hail"]{
+      color:orange;
+    }  
   `;
 
   // Declare reactive properties
@@ -79,7 +84,7 @@ export class ForecastTable extends LitElement {
             <td>${item.windSpeed || "-"}</td>
             <td style="${this.getStylePrecipitation(item.precipitation)}">${item.precipitation || "-"}${item.precipitation ? " mm" : ""}</td>
             <td>${item.humidity} %</td>
-            <td class="condition"><ha-icon icon="mdi:${getConditionIcon(item.condition)}"></ha-icon></td>
+            <td class="condition"><ha-icon class="weatherIcon" icon="mdi:${getConditionIcon(item.condition)}"></ha-icon></td>
         </tr>`
     }
   
