@@ -63,7 +63,7 @@ export class ForecastTable extends LitElement {
         humidity: item.humidity,
         precipitation: item.precipitation,
         windBearing: item.wind_bearing,
-        windSpeed: item.wind_speed
+        windSpeed: Math.round(item.wind_speed)
     }
   }
 
@@ -78,7 +78,7 @@ export class ForecastTable extends LitElement {
             <td>${item.time}</td>
             <td class="temperature" style="${this.getStyleTemp(item.temperature)}">${item.temperature}°C</td>
             <td> ${item.windBearing ? html`<div style="transform:rotate(${(item.windBearing || 0) + 180}deg)">
-                                            <ha-icon icon="mdi:arrow-up" ></ha-icon>
+                                            <ha-icon icon="mdi:navigation" ></ha-icon>
                                           </div>` : nothing }
         </td>
             <td>${item.windSpeed || "-"}</td>
