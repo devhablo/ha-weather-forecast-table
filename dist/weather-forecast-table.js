@@ -319,13 +319,13 @@ const Tt = (r, t) => {
   }
   return [ut(r, o + (r[e] || "<?>") + (t === 2 ? "</svg>" : "")), s];
 };
-class H {
+class M {
   constructor({ strings: t, _$litType$: e }, s) {
     let i;
     this.parts = [];
     let o = 0, n = 0;
     const h = t.length - 1, a = this.parts, [d, p] = Tt(t, e);
-    if (this.el = H.createElement(d, s), m.currentNode = this.el.content, e === 2) {
+    if (this.el = M.createElement(d, s), m.currentNode = this.el.content, e === 2) {
       const c = this.el.content.firstChild;
       c.replaceWith(...c.childNodes);
     }
@@ -335,7 +335,7 @@ class H {
           for (const c of i.getAttributeNames())
             if (c.endsWith(ct)) {
               const u = p[n++], f = i.getAttribute(c).split(_), R = /([.?@])?(.*)/.exec(u);
-              a.push({ type: 1, index: o, name: R[2], strings: f, ctor: R[1] === "." ? xt : R[1] === "?" ? Ot : R[1] === "@" ? Ht : j }), i.removeAttribute(c);
+              a.push({ type: 1, index: o, name: R[2], strings: f, ctor: R[1] === "." ? xt : R[1] === "?" ? Ot : R[1] === "@" ? Mt : j }), i.removeAttribute(c);
             } else
               c.startsWith(_) && (a.push({ type: 6, index: o }), i.removeAttribute(c));
         if (pt.test(i.tagName)) {
@@ -388,7 +388,7 @@ class Ut {
     for (; a !== void 0; ) {
       if (n === a.index) {
         let d;
-        a.type === 2 ? d = new M(o, o.nextSibling, this, t) : a.type === 1 ? d = new a.ctor(o, a.name, a.strings, this, t) : a.type === 6 && (d = new Mt(o, this, t)), this._$AV.push(d), a = s[++h];
+        a.type === 2 ? d = new H(o, o.nextSibling, this, t) : a.type === 1 ? d = new a.ctor(o, a.name, a.strings, this, t) : a.type === 6 && (d = new Ht(o, this, t)), this._$AV.push(d), a = s[++h];
       }
       n !== (a == null ? void 0 : a.index) && (o = m.nextNode(), n++);
     }
@@ -400,7 +400,7 @@ class Ut {
       s !== void 0 && (s.strings !== void 0 ? (s._$AI(t, s, e), e += s.strings.length - 2) : s._$AI(t[e])), e++;
   }
 }
-class M {
+class H {
   get _$AU() {
     var t;
     return ((t = this._$AM) == null ? void 0 : t._$AU) ?? this._$Cv;
@@ -433,7 +433,7 @@ class M {
   }
   $(t) {
     var o;
-    const { values: e, _$litType$: s } = t, i = typeof s == "number" ? this._$AC(t) : (s.el === void 0 && (s.el = H.createElement(ut(s.h, s.h[0]), this.options)), s);
+    const { values: e, _$litType$: s } = t, i = typeof s == "number" ? this._$AC(t) : (s.el === void 0 && (s.el = M.createElement(ut(s.h, s.h[0]), this.options)), s);
     if (((o = this._$AH) == null ? void 0 : o._$AD) === i)
       this._$AH.p(e);
     else {
@@ -443,14 +443,14 @@ class M {
   }
   _$AC(t) {
     let e = rt.get(t.strings);
-    return e === void 0 && rt.set(t.strings, e = new H(t)), e;
+    return e === void 0 && rt.set(t.strings, e = new M(t)), e;
   }
   k(t) {
     dt(this._$AH) || (this._$AH = [], this._$AR());
     const e = this._$AH;
     let s, i = 0;
     for (const o of t)
-      i === e.length ? e.push(s = new M(this.S(x()), this.S(x()), this, this.options)) : s = e[i], s._$AI(o), i++;
+      i === e.length ? e.push(s = new H(this.S(x()), this.S(x()), this, this.options)) : s = e[i], s._$AI(o), i++;
     i < e.length && (this._$AR(s && s._$AB.nextSibling, i), e.length = i);
   }
   _$AR(t = this._$AA.nextSibling, e) {
@@ -508,7 +508,7 @@ class Ot extends j {
     this.element.toggleAttribute(this.name, !!t && t !== l);
   }
 }
-class Ht extends j {
+class Mt extends j {
   constructor(t, e, s, i, o) {
     super(t, e, s, i, o), this.type = 5;
   }
@@ -523,7 +523,7 @@ class Ht extends j {
     typeof this._$AH == "function" ? this._$AH.call(((e = this.options) == null ? void 0 : e.host) ?? this.element, t) : this._$AH.handleEvent(t);
   }
 }
-class Mt {
+class Ht {
   constructor(t, e, s) {
     this.element = t, this.type = 6, this._$AN = void 0, this._$AM = e, this.options = s;
   }
@@ -535,13 +535,13 @@ class Mt {
   }
 }
 const W = U.litHtmlPolyfillSupport;
-W == null || W(H, M), (U.litHtmlVersions ?? (U.litHtmlVersions = [])).push("3.1.3");
+W == null || W(M, H), (U.litHtmlVersions ?? (U.litHtmlVersions = [])).push("3.1.3");
 const Rt = (r, t, e) => {
   const s = (e == null ? void 0 : e.renderBefore) ?? t;
   let i = s._$litPart$;
   if (i === void 0) {
     const o = (e == null ? void 0 : e.renderBefore) ?? null;
-    s._$litPart$ = i = new M(t.insertBefore(x(), o), o, void 0, e ?? {});
+    s._$litPart$ = i = new H(t.insertBefore(x(), o), o, void 0, e ?? {});
   }
   return i._$AI(r), i;
 };
@@ -695,14 +695,14 @@ let k = class extends w {
         humidity: r.humidity,
         precipitation: r.precipitation,
         windBearing: r.wind_bearing,
-        windSpeed: r.wind_speed
+        windSpeed: Math.round(r.wind_speed)
       };
     }, this.renderDay = (r, t, e) => e.map((s, i) => this.renderItem(i, r, e.length, s, t)), this.renderItem = (r, t, e, s, i) => $`<tr class="${i}">
             ${r == 0 ? $`<td rowspan="${e}">${t}</td>` : $``}
             <td>${s.time}</td>
             <td class="temperature" style="${this.getStyleTemp(s.temperature)}">${s.temperature}°C</td>
             <td> ${s.windBearing ? $`<div style="transform:rotate(${(s.windBearing || 0) + 180}deg)">
-                                            <ha-icon icon="mdi:arrow-up" ></ha-icon>
+                                            <ha-icon icon="mdi:navigation" ></ha-icon>
                                           </div>` : l}
         </td>
             <td>${s.windSpeed || "-"}</td>
