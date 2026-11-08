@@ -2,6 +2,15 @@
 
 Cette carte affiche les prévisions météo dans un **tableau** lisible d'un coup d'œil : une ligne par créneau, regroupées par jour.
 
+## Aperçu
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/preview-dark.png">
+  <img alt="Aperçu de la carte : température colorée, icône météo, direction du vent et intensité de la pluie" src="docs/preview-light.png" width="520">
+</picture>
+
+*Aperçu généré avec les données d'exemple de `index.js` (valeurs fictives).*
+
 ## Fonctionnalités
 
 - Température colorée du bleu (froid) au rouge (chaud)
